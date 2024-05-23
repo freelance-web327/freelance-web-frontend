@@ -4,6 +4,7 @@ import Error from "./Pages/Error";
 import Home from "./components/Fahim/homePage/Home";
 import AdminPanel from "./components/Fahim/adminPanel/AdminPanel";
 import Chat from "./components/Fahim/projectCollaboration/Chat";
+import PaymentForm from "./components/Jahid/PaymentForm";
 import AdvanceSearch from "./components/Jahid/AdvanceSearch";
 /**
  * Main application component.
@@ -26,6 +27,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/user/chat" element={<Chat />} />
         <Route path="/admin" element={<AdminPanel />} />
+        <Route path="/payment" element={<PaymentForm />} />
         <Route path="/search" element={<AdvanceSearch />} />
         <Route path="*" element={<Error />} />
       </Routes>
