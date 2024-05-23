@@ -5,6 +5,13 @@ import Home from "./components/Fahim/homePage/Home";
 import AdminPanel from "./components/Fahim/adminPanel/AdminPanel";
 import Chat from "./components/Fahim/projectCollaboration/Chat";
 
+/**
+ * Main application component.
+ *
+ * @returns {JSX.Element} The Router component with defined routes.
+ *
+ */
+
 function App() {
   return (
     <Router>
