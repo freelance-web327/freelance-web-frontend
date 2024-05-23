@@ -1,15 +1,29 @@
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getProjects } from "../../../../features/actions/adminActions";
+
+/**
+ * Projects component.
+ * @returns {JSX.Element} Projects UI.
+ */
 const Projects = () => {
+  const dispatch = useDispatch();
+  const projects = useSelector((state) => state.projects);
+
+  useEffect(() => {
+    dispatch(getProjects());
+  }, [dispatch]);
+
   return (
     <div>
-      <h2 className="text-2xl font-bold mb-4">Projects</h2>
-      <div className="bg-white p-4 rounded shadow">
-        <h3 className="text-xl font-semibold">Project 1</h3>
-        <p>Details about project 1...</p>
-      </div>
-      <div className="bg-white p-4 rounded shadow mt-4">
-        <h3 className="text-xl font-semibold">Project 2</h3>
-        <p>Details about project 2...</p>
-      </div>
+      <h2>Projects</h2>
+      <ul>
+        {projects.map((project) => (
+          <li key={project._id}>
+            {project.title} - {project.status}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
