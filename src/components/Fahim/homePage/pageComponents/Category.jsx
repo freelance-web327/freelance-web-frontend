@@ -1,5 +1,3 @@
-import React from "react";
-
 const categories = [
   { name: "Writing & Translation", services: 1 },
   { name: "Music & Audio", services: 0 },
