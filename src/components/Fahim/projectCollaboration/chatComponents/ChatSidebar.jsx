@@ -1,4 +1,14 @@
+import { useDispatch, useSelector } from "react-redux";
+import { fetchUserChats } from "../../../../features/actions/chatThunks";
+
+/**
+ * Sidebar component for displaying chat list.
+ * @returns {JSX.Element} Chat sidebar component.
+ */
 const ChatSidebar = () => {
+  const chats = useSelector((state) => state.chat.chats);
+  const dispatch = useDispatch();
+
   return (
     <div className="w-1/4 bg-gray-100 p-4">
       <div className="mb-4">
@@ -9,29 +19,26 @@ const ChatSidebar = () => {
         />
       </div>
       <div className="space-y-4">
-        <div className="p-4 bg-gray-300 rounded-md shadow-md">
-          <div className="flex justify-between items-center">
+        {chats.map((chat) => (
+          <div
+            key={chat._id}
+            className="p-4 bg-white rounded-md shadow-md"
+            onClick={() => dispatch(fetchUserChats(chat))}
+          >
             <div className="flex items-center">
               <span className="w-8 h-8 rounded-full bg-purple-500 text-white flex items-center justify-center">
-                G
+                {chat.participants[0].name[0]}
               </span>
-              <span className="ml-4">General</span>
+              <span className="ml-4">
+                {chat.participants.map((p) => p.name).join(", ")}
+              </span>
             </div>
-            <span className="text-sm text-gray-500">2:06 min</span>
+            <div className="text-gray-500 mt-2">
+              {chat.messages.length > 0 &&
+                chat.messages[chat.messages.length - 1].message}
+            </div>
           </div>
-          <div className="text-gray-500 mt-2">This theme is Awesome!</div>
-        </div>
-        <div className="p-4 bg-white rounded-md shadow-md">
-          <div className="flex items-center">
-            <span className="w-8 h-8 rounded-full bg-purple-500 text-white flex items-center justify-center">
-              D
-            </span>
-            <span className="ml-4">Designer</span>
-          </div>
-          <div className="text-gray-500 mt-2">
-            Next meeting tomorrow 10.00AM
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   );
