@@ -1,6 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
 import authReducer from "../features/auth/authSlice";
 import rootReducer from "../features/reducers/adminReducer";
+import paymentReducer from "../features/reducers/paymentReducer";
+import searchReducer from "../features/reducers/searchReducer";
+
 
 /**
  * Configures the Redux store with various reducers.
@@ -19,6 +22,8 @@ export const store = configureStore({
     auth: authReducer,
     admin: rootReducer,
     payment: paymentReducer,
+    search: searchReducer,
+
   },
 });
 
