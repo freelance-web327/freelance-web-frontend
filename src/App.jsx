@@ -6,6 +6,8 @@ import AdminPanel from "./components/Fahim/adminPanel/AdminPanel";
 import Chat from "./components/Fahim/projectCollaboration/Chat";
 import PaymentForm from "./components/Jahid/PaymentForm";
 import AdvanceSearch from "./components/Jahid/AdvanceSearch";
+import Login from "./components/Login";
+import Register from "./components/Register";
 /**
  * Main application component.
  *
@@ -25,6 +27,8 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
         <Route path="/user/chat" element={<Chat />} />
         <Route path="/admin" element={<AdminPanel />} />
         <Route path="/payment" element={<PaymentForm />} />
