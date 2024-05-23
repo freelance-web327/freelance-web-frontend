@@ -4,7 +4,7 @@ import rootReducer from "../features/reducers/adminReducer";
 import chatReducer from "../features/reducers/chatReducer";
 import paymentReducer from "../features/reducers/paymentReducer";
 import searchReducer from "../features/reducers/searchReducer";
-import { profileReducer } from "../features/reducers/ProfileReducers";
+import proposalReducer from "../features/reducers/proposalReducer";
 
 
 /**
@@ -17,6 +17,7 @@ import { profileReducer } from "../features/reducers/ProfileReducers";
  * @property {Function} reducer.search - Handles search functionality state.
  * @property {Function} reducer.payment - Handles payment state.
  * @property {Function} reducer.projectCreate - Handles project creation state.
+ * @property {Function} reducer.projectProposal - Handles project proposals state.
  * @returns {EnhancedStore} The configured Redux store.
  */
 
@@ -29,6 +30,7 @@ export const store = configureStore({
     payment: paymentReducer,
     search: searchReducer,
     projectCreate: projectCreateReducer,
+    projectProposal: proposalReducer,
   },
 });
 
