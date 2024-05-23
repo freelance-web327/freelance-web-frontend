@@ -8,6 +8,7 @@ import PaymentForm from "./components/Jahid/PaymentForm";
 import AdvanceSearch from "./components/Jahid/AdvanceSearch";
 import ProjectPosting from "./components/Emon/ProjectPosting";
 import ProjectListing from "./components/Emon/ProjectListing";
+import FreelancerProposal from "./components/Emon/FreelancerProposal";
 
 /**
  * Main application component.
@@ -34,6 +35,7 @@ function App() {
         <Route path="/search" element={<AdvanceSearch />} />
         <Route path="/projects" element={<ProjectListing />} />
         <Route path="/projects/posting" element={<ProjectPosting />} />
+        <Route path="/projects/proposal" element={<FreelancerProposal />} />
         <Route path="*" element={<Error />} />
       </Routes>
     </Router>
