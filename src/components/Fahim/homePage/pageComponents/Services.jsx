@@ -1,5 +1,3 @@
-import React from "react";
-
 const services = [
   {
     title: "Developers drop the framework folder into a new parent",
