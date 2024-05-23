@@ -16,6 +16,7 @@ import { profileReducer } from "../features/reducers/ProfileReducers";
  * @property {Function} reducer.chat - Handles chat state.
  * @property {Function} reducer.search - Handles search functionality state.
  * @property {Function} reducer.payment - Handles payment state.
+ * @property {Function} reducer.profile - Handles user profile state.
  * @property {Function} reducer.projectCreate - Handles project creation state.
  * @returns {EnhancedStore} The configured Redux store.
  */
@@ -29,6 +30,7 @@ export const store = configureStore({
     payment: paymentReducer,
     search: searchReducer,
     projectCreate: projectCreateReducer,
+    profile: profileReducer,
   },
 });
 
